@@ -1,0 +1,20 @@
+:root {
+  --ink: #182237;
+  --ink-soft: #46515f;
+  --paper: #f8f7f3;
+  --paper-deep: #efede6;
+  --sand: #e8ddc5;
+  --gold: #cca85b;
+  --gold-dark: #8c6a2f;
+  --muted: #62666b;
+  --on-dark-muted: #b9bec7;
+  --rule: #dcdcd5;
+  --focus: #9c692a;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Manrope Variable", Arial, sans-serif;
+  --content-width: 1312px;
+  --gutter: clamp(24px, 4.45vw, 80px);
+  --duration-fast: 220ms;
+  --duration-scene: 850ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
