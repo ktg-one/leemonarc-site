@@ -169,7 +169,7 @@ button:hover > .arrow {
   gap: 36px;
   margin-left: auto;
   margin-right: 40px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .desktop-nav a {
   position: relative;
@@ -199,7 +199,7 @@ button:hover > .arrow {
   padding: 10px 16px;
   border: 1px solid var(--ink);
   border-radius: 2px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .header-contact:hover {
   background: var(--ink);
@@ -216,7 +216,7 @@ button:hover > .arrow {
   border: 1px solid var(--ink);
   padding: 7px 13px;
   min-height: 40px;
-  font-size: 11px;
+  font-size: 12px;
   cursor: pointer;
 }
 .mobile-menu > summary::-webkit-details-marker {
@@ -413,7 +413,7 @@ button:hover > .arrow {
   padding-block: 28px;
 }
 .introduction-strip > p {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
 }
 .introduction-strip > p > span {
@@ -423,7 +423,7 @@ button:hover > .arrow {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .introduction-strip i {
   width: 3px;
@@ -483,7 +483,7 @@ button:hover > .arrow {
   background: var(--paper-deep);
 }
 .service-number {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .service h3 {
@@ -494,7 +494,7 @@ button:hover > .arrow {
   line-height: 1.2;
 }
 .service-short {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .service-toggle {
@@ -523,7 +523,7 @@ button:hover > .arrow {
   flex-direction: column;
   align-items: flex-start;
   gap: 7px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .service-topics > span::before {
   content: "—";
@@ -602,7 +602,7 @@ button:hover > .arrow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .adviser-art-caption > span:last-child {
@@ -669,7 +669,7 @@ button:hover > .arrow {
 }
 .phone-link {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 16px;
 }
 .phone-link:hover {
@@ -701,7 +701,7 @@ button:hover > .arrow {
   width: 255px;
 }
 .footer-top > p {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin-right: auto;
   margin-left: 8%;
@@ -829,7 +829,7 @@ button:hover > .arrow {
     margin-bottom: 24px;
   }
   .button {
-    font-size: 11px;
+    font-size: 12px;
     min-height: 52px;
   }
   .hero-footnote {
@@ -923,7 +923,7 @@ button:hover > .arrow {
     font-size: 53px;
   }
   .perspective-intro > p {
-    font-size: 11px;
+    font-size: 12px;
   }
   .adviser-section {
     grid-template-columns: 1fr;
@@ -957,7 +957,7 @@ button:hover > .arrow {
     font-size: 61px;
   }
   .contact-banner-copy p {
-    font-size: 11px;
+    font-size: 12px;
   }
   .contact-watermark {
     top: 95px;
