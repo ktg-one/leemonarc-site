@@ -34,7 +34,10 @@ test("desktop scroll connects the perspective stages", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
   const scene = page.locator("#perspective");
-  await expect(scene).toHaveAttribute("data-scroll-scene", "true");
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-scroll-scene",
+    "true",
+  );
   for (const [progress, name] of [
     [0.05, "01 Understand"],
     [0.5, "02 Connect"],
@@ -55,6 +58,46 @@ test("desktop scroll connects the perspective stages", async ({ page }) => {
       "true",
     );
   }
+});
+
+test("desktop scroll assembles the monogram study", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/");
+  const scene = page.locator("#vivienne");
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-scroll-scene",
+    "true",
+  );
+  const art = scene.locator(".adviser-art");
+  for (const [progress, step] of [
+    [0.05, "0"],
+    [0.5, "1"],
+    [0.95, "2"],
+  ] as const) {
+    await scene.evaluate((element, progress) => {
+      const art = element.querySelector(".adviser-art")!;
+      window.scrollTo({
+        top:
+          element.getBoundingClientRect().top +
+          window.scrollY +
+          (element.clientHeight - art.clientHeight) * progress,
+        behavior: "instant",
+      });
+    }, progress);
+    await expect(art).toHaveAttribute("data-step", step);
+  }
+});
+
+test("monogram study stays static under reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/");
+  const scene = page.locator("#vivienne");
+  await expect(page.locator("html")).not.toHaveAttribute(
+    "data-scroll-scene",
+    "true",
+  );
+  await expect(scene.locator(".study-overlay")).toBeHidden();
 });
 
 test("conversation page provides real direct contact details", async ({

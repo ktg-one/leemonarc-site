@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
-import "@fontsource/instrument-serif/latin-400.css";
-import "@fontsource/instrument-serif/latin-400-italic.css";
-import "@fontsource-variable/manrope";
+import { Instrument_Serif, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header, Footer } from "@/components/chrome";
 import { Cursor } from "@/components/cursor";
+
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+// Pre-paint gate for the sticky scroll scenes: applies their extra section
+// height before first paint so page height never inflates post-hydration.
+// Keep this query in sync with scrollSceneQuery in src/lib/motion.ts.
+const scrollSceneGate = `if (window.matchMedia("(min-width: 900px) and (min-height: 750px) and (prefers-reduced-motion: no-preference)").matches) document.documentElement.dataset.scrollScene = "true";`;
 
 export const metadata: Metadata = {
   title: "Lee Monarc — Accounting & Advisory, Perth",
@@ -17,8 +33,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" className={`${instrumentSerif.variable} ${manrope.variable}`}>
       <body id="top">
+        <Script id="scroll-scene-gate" strategy="beforeInteractive">
+          {scrollSceneGate}
+        </Script>
         <Header />
         {children}
         <Footer />

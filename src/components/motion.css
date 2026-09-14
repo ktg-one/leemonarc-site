@@ -46,15 +46,23 @@
   }
   @supports (animation-timeline: view()) {
     .architecture-image {
-      animation: photo-depth linear both;
+      animation: photo-depth 1ms linear both;
       animation-timeline: view();
       animation-range: exit 0% exit 100%;
     }
     .section-heading,
     .adviser-copy {
-      animation: arrive linear both;
+      animation: arrive 1ms linear both;
       animation-timeline: view();
       animation-range: entry 0% entry 55%;
+    }
+    .contact-watermark {
+      animation: watermark-rise 1ms linear both;
+      animation-timeline: scroll(root block);
+      /* Banner (367px) + footer (~254px) ≈ 640px: starts as the card's edge
+         appears, completes exactly at page bottom. A view() range can't
+         work here — the banner never exits, so cover/exit ranges clamp. */
+      animation-range: calc(100% - 640px) 100%;
     }
   }
 }
@@ -84,5 +92,15 @@
   }
   to {
     transform: scale(1.09) translateY(16px);
+  }
+}
+@keyframes watermark-rise {
+  from {
+    transform: translate(-30px, 110px);
+    opacity: 0.06;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 0.25;
   }
 }

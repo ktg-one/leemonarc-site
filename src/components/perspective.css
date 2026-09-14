@@ -1,7 +1,7 @@
-.perspective-section[data-scroll-scene="true"] {
+html[data-scroll-scene="true"] .perspective-section {
   min-height: calc(100svh + 520px);
 }
-.perspective-section[data-scroll-scene="true"] .perspective-inner {
+html[data-scroll-scene="true"] .perspective-section .perspective-inner {
   position: sticky;
   top: 0;
   min-height: 100svh;

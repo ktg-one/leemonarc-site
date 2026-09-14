@@ -84,13 +84,30 @@ test("keyboard skip link reaches main content", async ({ page }) => {
   await expect(page).toHaveURL(/#main$/);
 });
 
+test("cold load renders the hero without layout shift", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.addInitScript(() => {
+    const win = window as unknown as { __cls: number };
+    win.__cls = 0;
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries())
+        win.__cls += (entry as PerformanceEntry & { value: number }).value;
+    }).observe({ type: "layout-shift", buffered: true });
+  });
+  await page.goto("/", { waitUntil: "networkidle" });
+  await page.waitForTimeout(1500);
+  expect(
+    await page.evaluate(() => (window as unknown as { __cls: number }).__cls),
+  ).toBeLessThan(0.01);
+});
+
 test("reduced motion removes pinning and animated geometry", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await expect(page.locator("#perspective")).not.toHaveAttribute(
+  await expect(page.locator("html")).not.toHaveAttribute(
     "data-scroll-scene",
     "true",
   );

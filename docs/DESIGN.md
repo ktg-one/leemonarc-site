@@ -53,7 +53,7 @@ One direction, not another kit: clear perspective. Pale architectural photograph
 
 ## Typography
 
-Instrument Serif, regular and italic, for editorial headlines; Manrope for navigation, body and labels. Fonts are self-hosted. Avoid all-caps body copy, dense card layouts, fake dashboard metrics and excessive bold type.
+Instrument Serif, regular and italic, for editorial headlines; Manrope for navigation, body and labels. Fonts are self-hosted via `next/font` in `layout.tsx` (build-time preload, metric-matched fallbacks — keeps cold-load typography stable); the `--font-display`/`--font-body` tokens map to its injected variables. Avoid all-caps body copy, dense card layouts, fake dashboard metrics and excessive bold type.
 
 ## Layout
 
@@ -61,7 +61,7 @@ Asymmetric split hero; wide horizontal service rows; a navy perspective chapter;
 
 ## Components
 
-Real links, native disclosure elements and explicit perspective buttons. Few primitives; page composition remains readable in React. Homepage is the reference. Contact has a practical editorial layout rather than a duplicated landing-page template.
+Real links, native disclosure elements and explicit perspective buttons. Few primitives; page composition remains readable in React. Homepage is the reference. Contact has a practical editorial layout rather than a duplicated landing-page template. The monogram artwork carries a scroll-driven drafting study (see MOTION.md); the supplied mark itself is never animated or altered.
 
 ## Do's and Don'ts
 

@@ -37,8 +37,8 @@ export function Perspective() {
       if (!frame) frame = requestAnimationFrame(update);
     };
     const configure = () => {
-      if (query.matches) section.dataset.scrollScene = "true";
-      else delete section.dataset.scrollScene;
+      if (query.matches) document.documentElement.dataset.scrollScene = "true";
+      else delete document.documentElement.dataset.scrollScene;
       schedule();
     };
     configure();
@@ -47,7 +47,7 @@ export function Perspective() {
     window.addEventListener("resize", schedule, { passive: true });
     return () => {
       cancelAnimationFrame(frame);
-      delete section.dataset.scrollScene;
+      delete document.documentElement.dataset.scrollScene;
       query.removeEventListener("change", configure);
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);

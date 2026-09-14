@@ -344,6 +344,20 @@ Update design documentation when an established decision genuinely changes.
 
 ---
 
+# Code Navigation
+
+This repo is indexed with CodeGraph (`.codegraph/`). The CLI is on PATH — use it instead of broad file sweeps:
+
+- `codegraph explore <topic>` — relevant symbols' source plus call paths
+- `codegraph context <task>` — task-scoped symbols and relationships
+- `codegraph impact <symbol>` — blast radius before editing shared code (e.g. `tokens.css`, `motion.ts`)
+- `codegraph query <name>` — locate a symbol
+- `codegraph sync` — refresh the index after structural edits
+
+No MCP server or extra configuration is required.
+
+---
+
 # Working Method
 
 Before editing:

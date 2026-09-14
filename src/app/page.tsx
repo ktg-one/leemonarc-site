@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/chrome";
 import { business, services } from "@/content/site";
 import { Perspective } from "@/components/perspective";
+import { MonogramStudy } from "@/components/monogram-study";
 
 export default function Home() {
   return (
@@ -164,21 +165,7 @@ export default function Home() {
         className="adviser-section section-shell section-space"
         aria-labelledby="adviser-title"
       >
-        <div className="adviser-art">
-          <span className="eyebrow">An independent perspective</span>
-          <div className="monogram-frame">
-            <Image
-              src="/brand/logo-light.png"
-              width={292}
-              height={311}
-              alt="Lee Monarc monogram"
-            />
-          </div>
-          <div className="adviser-art-caption">
-            <span>Personal by design.</span>
-            <span aria-hidden="true">↗</span>
-          </div>
-        </div>
+        <MonogramStudy />
         <div className="adviser-copy">
           <p className="eyebrow">
             <span className="section-number">03 /</span> Meet Vivienne

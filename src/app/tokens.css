@@ -10,8 +10,8 @@
   --on-dark-muted: #b9bec7;
   --rule: #dcdcd5;
   --focus: #9c692a;
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "Manrope Variable", Arial, sans-serif;
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-body: var(--font-manrope), Arial, sans-serif;
   --content-width: 1312px;
   --gutter: clamp(24px, 4.45vw, 80px);
   --duration-fast: 220ms;
