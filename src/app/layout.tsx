@@ -20,7 +20,7 @@ const manrope = Manrope({
 // Pre-paint gate for the sticky scroll scenes: applies their extra section
 // height before first paint so page height never inflates post-hydration.
 // Keep this query in sync with scrollSceneQuery in src/lib/motion.ts.
-const scrollSceneGate = `if (window.matchMedia("(min-width: 900px) and (min-height: 750px) and (prefers-reduced-motion: no-preference)").matches) document.documentElement.dataset.scrollScene = "true";`;
+const scrollSceneGate = `if (window.location.pathname === "/" && window.matchMedia("(min-width: 900px) and (min-height: 750px) and (prefers-reduced-motion: no-preference)").matches) document.documentElement.dataset.scrollScene = "true";`;
 
 export const metadata: Metadata = {
   title: "Lee Monarc — Accounting & Advisory, Perth",
@@ -33,7 +33,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-AU" className={`${instrumentSerif.variable} ${manrope.variable}`}>
+    <html
+      lang="en-AU"
+      className={`${instrumentSerif.variable} ${manrope.variable}`}
+      suppressHydrationWarning
+    >
       <body id="top">
         <Script id="scroll-scene-gate" strategy="beforeInteractive">
           {scrollSceneGate}

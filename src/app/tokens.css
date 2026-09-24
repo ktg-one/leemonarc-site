@@ -14,7 +14,7 @@
   --font-body: var(--font-manrope), Arial, sans-serif;
   --content-width: 1312px;
   --gutter: clamp(24px, 4.45vw, 80px);
-  --duration-fast: 220ms;
-  --duration-scene: 850ms;
+  --duration-fast: 1600ms;
+  --duration-scene: 1800ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
