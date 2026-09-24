@@ -1,12 +1,12 @@
-# Lee Monarch Website
+# Lee Monarc Website
 
 ## Mission
 
-Build and maintain the public website for Lee Monarch Accounting & Advisory.
+Build and maintain the public website for Lee Monarc Accounting & Advisory.
 
 This is a premium professional-services website for a solo accountant / commercial finance adviser in Perth, Western Australia.
 
-Lee Monarch positions herself closer to an embedded e-CFO / strategic finance partner than a transactional bookkeeping practice.
+Lee Monarc positions herself closer to an embedded e-CFO / strategic finance partner than a transactional bookkeeping practice.
 
 The target audience is established and higher-value businesses that value:
 - commercial judgment
@@ -32,9 +32,23 @@ Technical complexity is never a goal by itself.
 
 ---
 
+# Commands
+
+Verified from package.json and README:
+
+- `npm ci` — install (package-lock.json is canonical; ignore the untracked bun.lock)
+- `npm run dev` — dev server at http://127.0.0.1:3100
+- `npm run build` / `npm start` — production on port 3100 (stop dev first)
+- `npm run lint` — ESLint 9.39.5 (pinned, see Pitfalls)
+- `npm run typecheck` — tsc --noEmit
+- `npm test` — Playwright, needs a running server on 3100; `PLAYWRIGHT_BASE_URL=http://127.0.0.1:3101 npm test` targets production
+- `node scripts/verify-visual.mjs` — production captures on 3101 into `artifacts/production/`
+
+---
+
 # Brand Authority
 
-The supplied Lee Monarch logo and wordmark are the fixed visual authority.
+The supplied Lee Monarc logo and wordmark are the fixed visual authority.
 
 There is no broader approved brand system yet.
 
@@ -256,7 +270,11 @@ When multiple good design options exist, choose one rather than presenting a men
 
 # Content
 
-Use the exact business name and spelling present in the supplied approved assets.
+The canonical copy source is `docs/LeeRevised September 2026.docx` (revised deck, 23 September 2026) — the filename contains a space, so quote the path in scripts.
+
+Its Section 13 "Review Notes" lists facts still UNCONFIRMED by the client: pricing, client proof/testimonials, the Chartered Accountant designation, years of experience, the public contact email, and first-person founder quotes. Treat those as provisional until Vivienne confirms; never present them as established.
+
+Use the exact business name and spelling present in the supplied approved assets — **Lee Monarc**, even where older briefing prose says "Monarch".
 
 Do not invent factual claims, credentials, client numbers, awards, financial outcomes, testimonials, memberships, or regulatory statements.
 
@@ -302,27 +320,33 @@ The browser implementation may serve as the primary design surface.
 
 # Site Architecture
 
-Determine the smallest information architecture that communicates the business clearly.
+The approved IA comes from the revised copy deck (`docs/LeeRevised September 2026.docx`):
 
-Likely surfaces include:
+- `/` — Home
+- `/services` — overview hub
+- `/services/accounting-compliance`
+- `/services/tax-planning`
+- `/services/business-structuring`
+- `/services/fractional-cfo-advisory`
+- `/services/business-acquisition`
+- `/services/succession-exit`
+- `/who-we-help`
+- `/about`
+- `/contact`
+- `/privacy` — planned, blocked on approved legal content
 
-- Home
-- Services
-- Advisory / e-CFO
-- About
-- Contact
+Only `/` and `/contact` are built so far.
 
-These are not mandatory.
-
-Add or remove pages according to the actual content and narrative.
-
-Do not create pages solely because professional-services templates usually contain them.
+Do not create pages beyond this list solely because professional-services templates usually contain them.
 
 ---
 
 # Project Documentation
 
 Keep implementation truth in the repository.
+
+## Before any content or copy work
+Read `docs/LeeRevised September 2026.docx` — the canonical revised copy deck.
 
 ## Before visual or layout work
 Read `docs/BRIEF.md` if it exists.
@@ -378,6 +402,19 @@ Surface uncertainty when:
 - requirements materially conflict
 - an irreversible architectural choice is required
 - a design change would replace an already-approved direction
+
+---
+
+# Pitfalls
+
+- `src/app/oracleJdk-27/` is a stray untracked 370MB JDK inside the app directory — not source, not a dependency. Exclude it from searches and never import from it.
+- Two lockfiles exist: `package-lock.json` is canonical (README uses npm); `bun.lock` is untracked residue. Do not switch package managers.
+- ESLint is pinned at 9.39.5 — ESLint 10 breaks the installed Next plugin. Upgrade the pair together, then re-run lint.
+- Windows: killing an npm/npx wrapper can orphan its Node child, leaving port 3100/3101 held. Verify the port is free before restarting; a 200 from `/` is not proof of a fresh server — check CSS/JS asset responses.
+- New machine Playwright setup: `PLAYWRIGHT_SKIP_BROWSER_GC=1 npx playwright install chromium` (protects other projects' cached browsers).
+- The copy-deck filename contains a space — quote `docs/LeeRevised September 2026.docx` everywhere.
+- `robots: noindex` is intentional until client approval; it is not access control.
+- The `nextjs-agent-rules` block below is regenerated by `next dev` — keep it.
 
 ---
 

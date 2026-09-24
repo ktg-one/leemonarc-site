@@ -35,17 +35,17 @@ export function MobileMenu() {
         </span>
       </summary>
       <nav aria-label="Mobile navigation">
-        <Link href="/#expertise" onClick={close}>
-          Expertise <span aria-hidden="true">↗</span>
+        <Link href="/services" onClick={close}>
+          Services <span aria-hidden="true">↗</span>
         </Link>
-        <Link href="/#perspective" onClick={close}>
-          Our approach <span aria-hidden="true">↗</span>
+        <Link href="/who-we-help" onClick={close}>
+          Who we help <span aria-hidden="true">↗</span>
         </Link>
-        <Link href="/#vivienne" onClick={close}>
-          Meet Vivienne <span aria-hidden="true">↗</span>
+        <Link href="/about" onClick={close}>
+          About us <span aria-hidden="true">↗</span>
         </Link>
         <Link href="/contact" onClick={close}>
-          Let’s talk <span aria-hidden="true">↗</span>
+          Tell us what’s on your mind <span aria-hidden="true">↗</span>
         </Link>
       </nav>
     </details>

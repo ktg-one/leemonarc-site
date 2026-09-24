@@ -8,48 +8,62 @@ export const business = {
   email: "vivienne@leemonarc.com.au",
 };
 
-// Provisional editorial copy, grounded in BRIEF.md and the supplied client material.
-// No testimonials, financial results, registrations or experience claims are implied.
+// Service list from the revised copy deck (docs/LeeRevised September 2026.docx).
+// href targets the deck-approved routes under /services/.
 export const services = [
   {
     number: "01",
-    title: "Accounting & tax",
-    short: "A considered foundation.",
+    title: "Accounting and compliance",
+    short: "Keep the essentials in order.",
     description:
-      "Make sense of your obligations and understand what your numbers are telling you. Clear accounting and thoughtful tax planning, connected to your wider business decisions.",
-    topics: ["Accounting", "Tax planning", "Capital gains considerations"],
+      "Keep your books, financial statements and tax returns in order, with reliable numbers to work from.",
+    topics: ["Bookkeeping", "Financial statements", "Tax returns"],
+    href: "/services/accounting-compliance",
   },
   {
     number: "02",
-    title: "Business advisory",
-    short: "Context for the decisions ahead.",
+    title: "Tax planning and advice",
+    short: "See tax coming.",
     description:
-      "Bring a commercial perspective to your next move. Explore the financial implications of your plans, understand the trade-offs and decide what deserves your attention.",
-    topics: ["Business decisions", "Commercial perspective", "Planning ahead"],
+      "Plan ahead with advice that considers your business and personal goals.",
+    topics: ["Planning ahead", "Business goals", "Personal goals"],
+    href: "/services/tax-planning",
   },
   {
     number: "03",
-    title: "e-CFO partnership",
-    short: "More than a year-end conversation.",
+    title: "Business structuring",
+    short: "Check that your structure fits the plan.",
     description:
-      "A closer financial partnership for a business that needs more than the annual accounts. Connect your day-to-day numbers with the longer-term direction of your business.",
-    topics: [
-      "Financial clarity",
-      "Ongoing conversation",
-      "Strategic direction",
-    ],
+      "Starting up, bringing in an owner or changing direction? Check that your structure fits the plan.",
+    topics: ["Starting up", "New owners", "Changing direction"],
+    href: "/services/business-structuring",
   },
   {
     number: "04",
-    title: "Structure & property",
-    short: "Think it through. Before you move.",
+    title: "Fractional CFO and business advisory",
+    short: "Guidance for the bigger calls.",
     description:
-      "Consider ownership structures and the tax implications of a property or business decision before committing. Understand the questions to ask and the options to discuss.",
-    topics: [
-      "Ownership structures",
-      "Property tax considerations",
-      "Trusts & companies",
-    ],
+      "Understand performance and assess your next move with experienced financial guidance.",
+    topics: ["Performance", "Cashflow", "Next moves"],
+    href: "/services/fractional-cfo-advisory",
+  },
+  {
+    number: "05",
+    title: "Business acquisition and due diligence",
+    short: "Ask the questions before you sign.",
+    description:
+      "Understand the financial opportunity and the questions to ask before buying a business.",
+    topics: ["Opportunity", "Due diligence", "Questions to ask"],
+    href: "/services/business-acquisition",
+  },
+  {
+    number: "06",
+    title: "Succession and exit planning",
+    short: "Prepare for the day you step back.",
+    description:
+      "Prepare for the day you want to sell, step back or pass on what you’ve built.",
+    topics: ["Selling", "Stepping back", "Passing it on"],
+    href: "/services/succession-exit",
   },
 ];
 

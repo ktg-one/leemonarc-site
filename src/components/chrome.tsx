@@ -46,12 +46,12 @@ export function Header() {
         />
       </Link>
       <nav aria-label="Main navigation" className="desktop-nav">
-        <Link href="/#expertise">Expertise</Link>
-        <Link href="/#perspective">Our approach</Link>
-        <Link href="/#vivienne">Meet Vivienne</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/who-we-help">Who we help</Link>
+        <Link href="/about">About us</Link>
       </nav>
       <Link href="/contact" className="header-contact">
-        Let’s talk <Arrow diagonal />
+        Tell us what’s on your mind <Arrow diagonal />
       </Link>
       <MobileMenu />
     </header>
@@ -72,16 +72,24 @@ export function Footer() {
           />
         </Link>
         <p>
-          A clearer perspective.
-          <br />A more considered future.
+          Know your numbers.
+          <br />
+          Decide what comes next.
         </p>
+        <nav aria-label="Footer navigation" className="footer-links">
+          <Link href="/services">Services</Link>
+          <Link href="/who-we-help">Who we help</Link>
+          <Link href="/about">About us</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/privacy">Privacy Policy</Link>
+        </nav>
         <a href="#top" className="back-top">
           Back to top <span aria-hidden="true">↑</span>
         </a>
       </div>
       <div className="footer-bottom">
-        <span>© Lee Monarc Accounting & Advisory</span>
-        <span>{business.location}</span>
+        <span>© 2026 Lee Monarc Accounting & Advisory</span>
+        <span>{business.location} · Working Australia wide</span>
         <a href={`mailto:${business.email}`}>
           Email Vivienne <Arrow diagonal />
         </a>
