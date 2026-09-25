@@ -1,68 +1,17 @@
----
-version: alpha
-name: Lee Monarc — A Clearer Perspective
-description: Architectural calm and editorial clarity, grounded in the supplied navy and brass identity.
-colors:
-  primary: "#182237"
-  secondary: "#46515f"
-  tertiary: "#cca85b"
-  neutral: "#f8f7f3"
-  muted: "#62666b"
-  sand: "#e8ddc5"
-typography:
-  heading:
-    fontFamily: Instrument Serif
-    fontSize: 4rem
-    fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.025em"
-  body:
-    fontFamily: Manrope Variable
-    fontSize: 0.875rem
-    fontWeight: 400
-    lineHeight: 1.65
-rounded:
-  control: 2px
-spacing:
-  mobile-gutter: 24px
-  section: 130px
-components:
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.neutral}"
-    rounded: "{rounded.control}"
-    padding: 16px
-  body-text:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.primary}"
-  secondary-text:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.muted}"
-  contact-panel:
-    backgroundColor: "{colors.sand}"
-    textColor: "{colors.primary}"
----
+# Lee Monarc — reference-led weekend build
 
-## Overview
+Updated 25 September 2026. The client rejected the earlier architectural redesign. Read `REFERENCE.md` for observed composition and the source precedence; older design prose is superseded by this contract.
 
-One direction, not another kit: clear perspective. Pale architectural photography creates space, oversized serif composition adds a human voice, and fine rules supply structure. Navy and gold come from the approved PNGs. The original marks are unmodified.
+## Visual system
 
-## Colors
+The homepage follows Paraform's wide cinematic hero, light feature/story chapters, dark advisory/feature chapters, returning-light selector/proof area, image CTA and footer. The dark background is not a global theme. Figma's extracted frames supply useful layout/copy slots but contain overlap defects and unsupported recruiting content.
 
-`src/app/tokens.css` is runtime authority. Gold is linework and emphasis, not small body text on ivory. Muted body text must stay legible; use the darker gold token for accents on pale surfaces. Sand is reserved for the closing invitation.
+Use supplied Lee Monarc logo files unchanged. The desktop shell is 1248px maximum. Paper is #f5f8f6; dark chapters #1a1a1a; cards #272727. Brass accents derive from the supplied identity. Card radii are 10px; CTAs are pills. Typography uses Newsreader and Manrope through Next font loading. This is an available font substitution for Paraform's proprietary Bureau faces; do not claim typeface identity.
 
-## Typography
+`src/app/tokens.css` owns shared values. `src/app/refresh.css` owns current shared primitives, shell/header/footer and overrides for supporting routes. Existing route styles remain individually editable. Home components use scoped prefixes and separate CSS; they do not own global styles.
 
-Instrument Serif, regular and italic, for editorial headlines; Manrope for navigation, body and labels. Fonts are self-hosted via `next/font` in `layout.tsx` (build-time preload, metric-matched fallbacks — keeps cold-load typography stable); the `--font-display`/`--font-body` tokens map to its injected variables. Avoid all-caps body copy, dense card layouts, fake dashboard metrics and excessive bold type.
+## Content and placeholders
 
-## Layout
+The revised September DOCX remains proposed client copy. Its review section identifies credentials, biography, experience, contact details and other facts awaiting confirmation. Missing video, portrait, client logos, proof and testimonial media are explicit review placeholders. Illustrative UI is labelled as such, not presented as a real report or customer outcome. Never use Paraform's client companies as Lee Monarc proof or create extra staff to fill a carousel.
 
-Asymmetric split hero; wide horizontal service rows; a navy perspective chapter; a personal adviser introduction; sand contact invitation. Mobile is intentionally recomposed, not merely shrunken. The logo is not a substitute portrait: its framed presentation explicitly reads as brand artwork.
-
-## Components
-
-Real links, native disclosure elements and explicit perspective buttons. Few primitives; page composition remains readable in React. Homepage is the reference. Contact has a practical editorial layout rather than a duplicated landing-page template. The monogram artwork carries a scroll-driven drafting study (see MOTION.md); the supplied mark itself is never animated or altered.
-
-## Do's and Don'ts
-
-Do preserve the exact supplied logo and business spelling. Do keep text and structure strong without animation. Don't imply the architectural image is the office. Don't invent results, testimonials, credentials or pricing. Don't add an animation library unless a future concept requires one.
+All enquiry CTAs lead to the existing contact path. No portal, fake form submission or recruitment platform is implemented. Public release is separate from this review build.

@@ -1,5 +1,11 @@
 # Lee Monarc Website
 
+## Current delivery override — 25 September 2026
+
+The client rejected the earlier direction. The current approved task is a Paraform-faithful homepage with wide background video, interactive cards, and the reference's light → dark → light sequence, plus consistent styling of every existing page. `docs/REFERENCE.md` supersedes conflicting design/interaction directions below and in older BRIEF/DESIGN/MOTION/HANDOFF files. Figma is supporting structure, not factual authority. Preserve the supplied identity, existing routes and canonical revised copy; visibly label missing media/proof in this review build. Do not invent staff, customer claims, testimonials or credentials. No public publishing is authorized.
+
+Shared global files are integration-lead owned. Workers edit only their assigned scoped modules and must not revert others' work. All eleven marketing routes now exist, plus a provisional privacy route; older notes saying only home/contact exist are stale. Read the current source.
+
 ## Mission
 
 Build and maintain the public website for Lee Monarc Accounting & Advisory.
